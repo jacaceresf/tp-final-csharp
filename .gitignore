@@ -1,0 +1,5 @@
+*.dll
+*.pdb
+
+MiAuto0Km/**/bin/**
+MiAuto0Km/**/obj/**
