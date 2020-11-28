@@ -1,5 +1,7 @@
 *.dll
 *.pdb
 
+MiAuto0Km/App_Data/
+
 MiAuto0Km/**/bin/**
 MiAuto0Km/**/obj/**

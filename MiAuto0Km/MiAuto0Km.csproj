@@ -169,12 +169,6 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Auto.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AutoConcesionaria.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Concesionaria.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -182,9 +176,11 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ConcesionariasController.cs" />
     <Compile Include="Controllers\ContactoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\VehiculoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -215,6 +211,12 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="TipoTransmision.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vehiculo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VehiculoConcesionaria.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -299,6 +301,16 @@
     <Content Include="Views\Contactoes\Details.cshtml" />
     <Content Include="Views\Contactoes\Edit.cshtml" />
     <Content Include="Views\Contactoes\Index.cshtml" />
+    <Content Include="Views\Concesionarias\Create.cshtml" />
+    <Content Include="Views\Concesionarias\Delete.cshtml" />
+    <Content Include="Views\Concesionarias\Details.cshtml" />
+    <Content Include="Views\Concesionarias\Edit.cshtml" />
+    <Content Include="Views\Concesionarias\Index.cshtml" />
+    <Content Include="Views\Vehiculoes\Create.cshtml" />
+    <Content Include="Views\Vehiculoes\Delete.cshtml" />
+    <Content Include="Views\Vehiculoes\Details.cshtml" />
+    <Content Include="Views\Vehiculoes\Edit.cshtml" />
+    <Content Include="Views\Vehiculoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -17,7 +17,7 @@ namespace MiAuto0Km
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Concesionaria()
         {
-            this.AutoConcesionarias = new HashSet<AutoConcesionaria>();
+            this.VehiculoConcesionarias = new HashSet<VehiculoConcesionaria>();
         }
     
         public int ID_Concesionaria { get; set; }
@@ -27,6 +27,6 @@ namespace MiAuto0Km
         public string Email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AutoConcesionaria> AutoConcesionarias { get; set; }
+        public virtual ICollection<VehiculoConcesionaria> VehiculoConcesionarias { get; set; }
     }
 }

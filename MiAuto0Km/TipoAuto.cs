@@ -17,13 +17,13 @@ namespace MiAuto0Km
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TipoAuto()
         {
-            this.Autoes = new HashSet<Auto>();
+            this.Vehiculoes = new HashSet<Vehiculo>();
         }
     
         public int ID_Tipo_Auto { get; set; }
         public string Descripion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Auto> Autoes { get; set; }
+        public virtual ICollection<Vehiculo> Vehiculoes { get; set; }
     }
 }

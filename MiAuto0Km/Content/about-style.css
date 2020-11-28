@@ -68,3 +68,7 @@ html {
         display: block;
     }
 }
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

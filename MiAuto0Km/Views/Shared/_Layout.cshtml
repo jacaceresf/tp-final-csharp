@@ -31,6 +31,12 @@
                     <li>@Html.ActionLink("Pagina principal", "Index", "Home")</li>
                     <li>@Html.ActionLink("Nosotros", "About", "Home")</li>
                     <li>@Html.ActionLink("Contáctenos", "Create", "Contactoes")</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Concesionarias", "Index", "Concesionarias")</li>
+                        <li>@Html.ActionLink("Agregar vehículo", "Create", "Vehiculoes")</li>
+                    }
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

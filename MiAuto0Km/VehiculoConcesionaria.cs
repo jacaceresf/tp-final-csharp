@@ -12,10 +12,10 @@ namespace MiAuto0Km
     using System;
     using System.Collections.Generic;
     
-    public partial class AutoConcesionaria
+    public partial class VehiculoConcesionaria
     {
-        public int ID_Concesionaria_Auto { get; set; }
-        public int Auto_Id { get; set; }
+        public int ID_Concesionaria_Vehiculo { get; set; }
+        public int Vehiculo_Id { get; set; }
         public int Concesionaria_Id { get; set; }
         public decimal PrecioFinanciadoDolares { get; set; }
         public int MaximoPlazoFinanciacion { get; set; }
@@ -23,7 +23,7 @@ namespace MiAuto0Km
         public decimal PrecioListaDolares { get; set; }
         public decimal EntregaDolares { get; set; }
     
-        public virtual Auto Auto { get; set; }
         public virtual Concesionaria Concesionaria { get; set; }
+        public virtual Vehiculo Vehiculo { get; set; }
     }
 }

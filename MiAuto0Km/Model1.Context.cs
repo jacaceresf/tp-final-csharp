@@ -16,7 +16,7 @@ namespace MiAuto0Km
     public partial class CerokmEntities : DbContext
     {
         public CerokmEntities()
-            : base("name=CerokmEntities")
+            : base("name=cerokmdbEntities")
         {
         }
     
@@ -25,12 +25,12 @@ namespace MiAuto0Km
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Auto> Autoes { get; set; }
-        public virtual DbSet<AutoConcesionaria> AutoConcesionarias { get; set; }
         public virtual DbSet<Concesionaria> Concesionarias { get; set; }
         public virtual DbSet<Contacto> Contactoes { get; set; }
         public virtual DbSet<Marca> Marcas { get; set; }
         public virtual DbSet<TipoAuto> TipoAutoes { get; set; }
         public virtual DbSet<TipoTransmision> TipoTransmisions { get; set; }
+        public virtual DbSet<Vehiculo> Vehiculoes { get; set; }
+        public virtual DbSet<VehiculoConcesionaria> VehiculoConcesionarias { get; set; }
     }
 }
