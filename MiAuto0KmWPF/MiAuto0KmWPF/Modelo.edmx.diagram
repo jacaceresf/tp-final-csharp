@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="05b1e98e5e2b4418b6dda586f19dcf22" Name="Diagram1">
+        <EntityTypeShape EntityType="cerokmdbModel.Concesionaria" Width="1.5" PointX="2.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="cerokmdbModel.Contacto" Width="1.5" PointX="6.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="cerokmdbModel.Marca" Width="1.5" PointX="1.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="cerokmdbModel.TipoAuto" Width="1.5" PointX="0.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="cerokmdbModel.TipoTransmision" Width="1.5" PointX="9.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cerokmdbModel.Vehiculo" Width="1.5" PointX="4.875" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cerokmdbModel.VehiculoConcesionaria" Width="1.5" PointX="8" PointY="3.25" IsExpanded="true" />
+        <AssociationConnector Association="cerokmdbModel.FK_AutoConcesionaria_Concesionaria" ManuallyRouted="false" />
+        <AssociationConnector Association="cerokmdbModel.FK_Auto_Marca" ManuallyRouted="false" />
+        <AssociationConnector Association="cerokmdbModel.FK_Auto_TipoAuto" ManuallyRouted="false" />
+        <AssociationConnector Association="cerokmdbModel.FK_Auto_TipoTransmision" ManuallyRouted="false" />
+        <AssociationConnector Association="cerokmdbModel.FK_AutoConcesionaria_Auto" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="cerokmdbModelStoreContainer" CdmEntityContainer="cerokmdbEntities">
+    <EntitySetMapping Name="Concesionaria">
+      <EntityTypeMapping TypeName="cerokmdbModel.Concesionaria">
+        <MappingFragment StoreEntitySet="Concesionaria">
+          <ScalarProperty Name="ID_Concesionaria" ColumnName="ID_Concesionaria" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacto">
+      <EntityTypeMapping TypeName="cerokmdbModel.Contacto">
+        <MappingFragment StoreEntitySet="Contacto">
+          <ScalarProperty Name="ID_Contacto" ColumnName="ID_Contacto" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Asunto" ColumnName="Asunto" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marca">
+      <EntityTypeMapping TypeName="cerokmdbModel.Marca">
+        <MappingFragment StoreEntitySet="Marca">
+          <ScalarProperty Name="ID_Marca" ColumnName="ID_Marca" />
+          <ScalarProperty Name="Nombre_Marca" ColumnName="Nombre_Marca" />
+          <ScalarProperty Name="Descripcion_Marca" ColumnName="Descripcion_Marca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoAuto">
+      <EntityTypeMapping TypeName="cerokmdbModel.TipoAuto">
+        <MappingFragment StoreEntitySet="TipoAuto">
+          <ScalarProperty Name="ID_Tipo_Auto" ColumnName="ID_Tipo_Auto" />
+          <ScalarProperty Name="Descripion" ColumnName="Descripion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoTransmision">
+      <EntityTypeMapping TypeName="cerokmdbModel.TipoTransmision">
+        <MappingFragment StoreEntitySet="TipoTransmision">
+          <ScalarProperty Name="ID_TipoTransmision" ColumnName="ID_TipoTransmision" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehiculo">
+      <EntityTypeMapping TypeName="cerokmdbModel.Vehiculo">
+        <MappingFragment StoreEntitySet="Vehiculo">
+          <ScalarProperty Name="ID_Auto" ColumnName="ID_Auto" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Tipo_Auto_Id" ColumnName="Tipo_Auto_Id" />
+          <ScalarProperty Name="TipoTransmision_id" ColumnName="TipoTransmision_id" />
+          <ScalarProperty Name="Marca_Id" ColumnName="Marca_Id" />
+          <ScalarProperty Name="MotorCC" ColumnName="MotorCC" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Anho" ColumnName="Anho" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehiculoConcesionaria">
+      <EntityTypeMapping TypeName="cerokmdbModel.VehiculoConcesionaria">
+        <MappingFragment StoreEntitySet="VehiculoConcesionaria">
+          <ScalarProperty Name="ID_Concesionaria_Vehiculo" ColumnName="ID_Concesionaria_Vehiculo" />
+          <ScalarProperty Name="Vehiculo_Id" ColumnName="Vehiculo_Id" />
+          <ScalarProperty Name="Concesionaria_Id" ColumnName="Concesionaria_Id" />
+          <ScalarProperty Name="PrecioFinanciadoDolares" ColumnName="PrecioFinanciadoDolares" />
+          <ScalarProperty Name="MaximoPlazoFinanciacion" ColumnName="MaximoPlazoFinanciacion" />
+          <ScalarProperty Name="MinimoPlazoFinanciacion" ColumnName="MinimoPlazoFinanciacion" />
+          <ScalarProperty Name="PrecioListaDolares" ColumnName="PrecioListaDolares" />
+          <ScalarProperty Name="EntregaDolares" ColumnName="EntregaDolares" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

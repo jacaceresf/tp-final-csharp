@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="cerokmdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Concesionaria">
+    <Key>
+      <PropertyRef Name="ID_Concesionaria" />
+    </Key>
+    <Property Name="ID_Concesionaria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="100" />
+    <Property Name="Telefono" Type="varchar" MaxLength="100" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Contacto">
+    <Key>
+      <PropertyRef Name="ID_Contacto" />
+    </Key>
+    <Property Name="ID_Contacto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Telefono" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Asunto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Comentario" Type="varchar" MaxLength="140" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Marca">
+    <Key>
+      <PropertyRef Name="ID_Marca" />
+    </Key>
+    <Property Name="ID_Marca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre_Marca" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Descripcion_Marca" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoAuto">
+    <Key>
+      <PropertyRef Name="ID_Tipo_Auto" />
+    </Key>
+    <Property Name="ID_Tipo_Auto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripion" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoTransmision">
+    <Key>
+      <PropertyRef Name="ID_TipoTransmision" />
+    </Key>
+    <Property Name="ID_TipoTransmision" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vehiculo">
+    <Key>
+      <PropertyRef Name="ID_Auto" />
+    </Key>
+    <Property Name="ID_Auto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Tipo_Auto_Id" Type="int" Nullable="false" />
+    <Property Name="TipoTransmision_id" Type="int" Nullable="false" />
+    <Property Name="Marca_Id" Type="int" Nullable="false" />
+    <Property Name="MotorCC" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Modelo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Anho" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VehiculoConcesionaria">
+    <Key>
+      <PropertyRef Name="ID_Concesionaria_Vehiculo" />
+    </Key>
+    <Property Name="ID_Concesionaria_Vehiculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Vehiculo_Id" Type="int" Nullable="false" />
+    <Property Name="Concesionaria_Id" Type="int" Nullable="false" />
+    <Property Name="PrecioFinanciadoDolares" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="MaximoPlazoFinanciacion" Type="int" Nullable="false" />
+    <Property Name="MinimoPlazoFinanciacion" Type="int" Nullable="false" />
+    <Property Name="PrecioListaDolares" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="EntregaDolares" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Auto_Marca">
+    <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
+    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marca">
+        <PropertyRef Name="ID_Marca" />
+      </Principal>
+      <Dependent Role="Vehiculo">
+        <PropertyRef Name="Marca_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Auto_TipoAuto">
+    <End Role="TipoAuto" Type="Self.TipoAuto" Multiplicity="1" />
+    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoAuto">
+        <PropertyRef Name="ID_Tipo_Auto" />
+      </Principal>
+      <Dependent Role="Vehiculo">
+        <PropertyRef Name="Tipo_Auto_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Auto_TipoTransmision">
+    <End Role="TipoTransmision" Type="Self.TipoTransmision" Multiplicity="1" />
+    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoTransmision">
+        <PropertyRef Name="ID_TipoTransmision" />
+      </Principal>
+      <Dependent Role="Vehiculo">
+        <PropertyRef Name="TipoTransmision_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoConcesionaria_Auto">
+    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+    <End Role="VehiculoConcesionaria" Type="Self.VehiculoConcesionaria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehiculo">
+        <PropertyRef Name="ID_Auto" />
+      </Principal>
+      <Dependent Role="VehiculoConcesionaria">
+        <PropertyRef Name="Vehiculo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoConcesionaria_Concesionaria">
+    <End Role="Concesionaria" Type="Self.Concesionaria" Multiplicity="1" />
+    <End Role="VehiculoConcesionaria" Type="Self.VehiculoConcesionaria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Concesionaria">
+        <PropertyRef Name="ID_Concesionaria" />
+      </Principal>
+      <Dependent Role="VehiculoConcesionaria">
+        <PropertyRef Name="Concesionaria_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="cerokmdbModelStoreContainer">
+    <EntitySet Name="Concesionaria" EntityType="Self.Concesionaria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contacto" EntityType="Self.Contacto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Marca" EntityType="Self.Marca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoAuto" EntityType="Self.TipoAuto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoTransmision" EntityType="Self.TipoTransmision" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VehiculoConcesionaria" EntityType="Self.VehiculoConcesionaria" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Auto_Marca" Association="Self.FK_Auto_Marca">
+      <End Role="Marca" EntitySet="Marca" />
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Auto_TipoAuto" Association="Self.FK_Auto_TipoAuto">
+      <End Role="TipoAuto" EntitySet="TipoAuto" />
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Auto_TipoTransmision" Association="Self.FK_Auto_TipoTransmision">
+      <End Role="TipoTransmision" EntitySet="TipoTransmision" />
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoConcesionaria_Auto" Association="Self.FK_AutoConcesionaria_Auto">
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
+      <End Role="VehiculoConcesionaria" EntitySet="VehiculoConcesionaria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoConcesionaria_Concesionaria" Association="Self.FK_AutoConcesionaria_Concesionaria">
+      <End Role="Concesionaria" EntitySet="Concesionaria" />
+      <End Role="VehiculoConcesionaria" EntitySet="VehiculoConcesionaria" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
