@@ -180,6 +180,7 @@
     <Compile Include="Controllers\ContactoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\VehiculoConcesionariasController.cs" />
     <Compile Include="Controllers\VehiculoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -307,10 +308,8 @@
     <Content Include="Views\Concesionarias\Edit.cshtml" />
     <Content Include="Views\Concesionarias\Index.cshtml" />
     <Content Include="Views\Vehiculoes\Create.cshtml" />
-    <Content Include="Views\Vehiculoes\Delete.cshtml" />
-    <Content Include="Views\Vehiculoes\Details.cshtml" />
-    <Content Include="Views\Vehiculoes\Edit.cshtml" />
-    <Content Include="Views\Vehiculoes\Index.cshtml" />
+    <Content Include="Views\VehiculoConcesionarias\Details.cshtml" />
+    <Content Include="Views\VehiculoConcesionarias\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

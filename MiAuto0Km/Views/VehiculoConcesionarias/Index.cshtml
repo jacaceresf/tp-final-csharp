@@ -1,0 +1,66 @@
+﻿@model IEnumerable<MiAuto0Km.VehiculoConcesionaria>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Vehículos por concesionaria</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Concesionaria.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vehiculo.Descripcion)
+        </th>
+        <th>
+            Precio USD
+        </th>
+        <th>
+            Max. Plazo Financiación
+        </th>
+        <th>
+            Mín. Plazo Financiación
+        </th>
+        <th>
+            Precio de Lista USD
+        </th>
+        <th>
+            Entrega USD
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Concesionaria.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vehiculo.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioFinanciadoDolares) $
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaximoPlazoFinanciacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinimoPlazoFinanciacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioListaDolares) $
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EntregaDolares) $
+            </td>
+
+            <td>
+                @Html.ActionLink("Detalles", "Details", new { id = item.ID_Concesionaria_Vehiculo })
+            </td>
+        </tr>
+    }
+
+</table>

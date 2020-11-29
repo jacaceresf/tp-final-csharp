@@ -38,7 +38,7 @@ namespace MiAuto0Km.Controllers
             {
                 db.Vehiculoes.Add(vehiculo);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             ViewBag.Marca_Id = new SelectList(db.Marcas, "ID_Marca", "Nombre_Marca", vehiculo.Marca_Id);
