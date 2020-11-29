@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="cerokmdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Concesionaria">
+          <Key>
+            <PropertyRef Name="ID_Concesionaria" />
+          </Key>
+          <Property Name="ID_Concesionaria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="100" />
+          <Property Name="Telefono" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Contacto">
+          <Key>
+            <PropertyRef Name="ID_Contacto" />
+          </Key>
+          <Property Name="ID_Contacto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Asunto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Comentario" Type="varchar" MaxLength="140" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Marca">
+          <Key>
+            <PropertyRef Name="ID_Marca" />
+          </Key>
+          <Property Name="ID_Marca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre_Marca" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Descripcion_Marca" Type="varchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoAuto">
+          <Key>
+            <PropertyRef Name="ID_Tipo_Auto" />
+          </Key>
+          <Property Name="ID_Tipo_Auto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripion" Type="varchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoTransmision">
+          <Key>
+            <PropertyRef Name="ID_TipoTransmision" />
+          </Key>
+          <Property Name="ID_TipoTransmision" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vehiculo">
+          <Key>
+            <PropertyRef Name="ID_Auto" />
+          </Key>
+          <Property Name="ID_Auto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Tipo_Auto_Id" Type="int" Nullable="false" />
+          <Property Name="TipoTransmision_id" Type="int" Nullable="false" />
+          <Property Name="Marca_Id" Type="int" Nullable="false" />
+          <Property Name="MotorCC" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Modelo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Anho" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VehiculoConcesionaria">
+          <Key>
+            <PropertyRef Name="ID_Concesionaria_Vehiculo" />
+          </Key>
+          <Property Name="ID_Concesionaria_Vehiculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vehiculo_Id" Type="int" Nullable="false" />
+          <Property Name="Concesionaria_Id" Type="int" Nullable="false" />
+          <Property Name="PrecioFinanciadoDolares" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="MaximoPlazoFinanciacion" Type="int" Nullable="false" />
+          <Property Name="MinimoPlazoFinanciacion" Type="int" Nullable="false" />
+          <Property Name="PrecioListaDolares" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="EntregaDolares" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Auto_Marca">
+          <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
+          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="ID_Marca" />
+            </Principal>
+            <Dependent Role="Vehiculo">
+              <PropertyRef Name="Marca_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Auto_TipoAuto">
+          <End Role="TipoAuto" Type="Self.TipoAuto" Multiplicity="1" />
+          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoAuto">
+              <PropertyRef Name="ID_Tipo_Auto" />
+            </Principal>
+            <Dependent Role="Vehiculo">
+              <PropertyRef Name="Tipo_Auto_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Auto_TipoTransmision">
+          <End Role="TipoTransmision" Type="Self.TipoTransmision" Multiplicity="1" />
+          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoTransmision">
+              <PropertyRef Name="ID_TipoTransmision" />
+            </Principal>
+            <Dependent Role="Vehiculo">
+              <PropertyRef Name="TipoTransmision_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AutoConcesionaria_Auto">
+          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+          <End Role="VehiculoConcesionaria" Type="Self.VehiculoConcesionaria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehiculo">
+              <PropertyRef Name="ID_Auto" />
+            </Principal>
+            <Dependent Role="VehiculoConcesionaria">
+              <PropertyRef Name="Vehiculo_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AutoConcesionaria_Concesionaria">
+          <End Role="Concesionaria" Type="Self.Concesionaria" Multiplicity="1" />
+          <End Role="VehiculoConcesionaria" Type="Self.VehiculoConcesionaria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Concesionaria">
+              <PropertyRef Name="ID_Concesionaria" />
+            </Principal>
+            <Dependent Role="VehiculoConcesionaria">
+              <PropertyRef Name="Concesionaria_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="cerokmdbModelStoreContainer">
+          <EntitySet Name="Concesionaria" EntityType="Self.Concesionaria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contacto" EntityType="Self.Contacto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Marca" EntityType="Self.Marca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoAuto" EntityType="Self.TipoAuto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoTransmision" EntityType="Self.TipoTransmision" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehiculoConcesionaria" EntityType="Self.VehiculoConcesionaria" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Auto_Marca" Association="Self.FK_Auto_Marca">
+            <End Role="Marca" EntitySet="Marca" />
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Auto_TipoAuto" Association="Self.FK_Auto_TipoAuto">
+            <End Role="TipoAuto" EntitySet="TipoAuto" />
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Auto_TipoTransmision" Association="Self.FK_Auto_TipoTransmision">
+            <End Role="TipoTransmision" EntitySet="TipoTransmision" />
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AutoConcesionaria_Auto" Association="Self.FK_AutoConcesionaria_Auto">
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+            <End Role="VehiculoConcesionaria" EntitySet="VehiculoConcesionaria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AutoConcesionaria_Concesionaria" Association="Self.FK_AutoConcesionaria_Concesionaria">
+            <End Role="Concesionaria" EntitySet="Concesionaria" />
+            <End Role="VehiculoConcesionaria" EntitySet="VehiculoConcesionaria" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="cerokmdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Concesionaria">
+          <Key>
+            <PropertyRef Name="ID_Concesionaria" />
+          </Key>
+          <Property Name="ID_Concesionaria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="VehiculoConcesionarias" Relationship="Self.FK_AutoConcesionaria_Concesionaria" FromRole="Concesionaria" ToRole="VehiculoConcesionaria" />
+        </EntityType>
+        <EntityType Name="Contacto">
+          <Key>
+            <PropertyRef Name="ID_Contacto" />
+          </Key>
+          <Property Name="ID_Contacto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Asunto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Comentario" Type="String" MaxLength="140" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Marca">
+          <Key>
+            <PropertyRef Name="ID_Marca" />
+          </Key>
+          <Property Name="ID_Marca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre_Marca" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion_Marca" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Vehiculoes" Relationship="Self.FK_Auto_Marca" FromRole="Marca" ToRole="Vehiculo" />
+        </EntityType>
+        <EntityType Name="TipoAuto">
+          <Key>
+            <PropertyRef Name="ID_Tipo_Auto" />
+          </Key>
+          <Property Name="ID_Tipo_Auto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Vehiculoes" Relationship="Self.FK_Auto_TipoAuto" FromRole="TipoAuto" ToRole="Vehiculo" />
+        </EntityType>
+        <EntityType Name="TipoTransmision">
+          <Key>
+            <PropertyRef Name="ID_TipoTransmision" />
+          </Key>
+          <Property Name="ID_TipoTransmision" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Vehiculoes" Relationship="Self.FK_Auto_TipoTransmision" FromRole="TipoTransmision" ToRole="Vehiculo" />
+        </EntityType>
+        <EntityType Name="Vehiculo">
+          <Key>
+            <PropertyRef Name="ID_Auto" />
+          </Key>
+          <Property Name="ID_Auto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tipo_Auto_Id" Type="Int32" Nullable="false" />
+          <Property Name="TipoTransmision_id" Type="Int32" Nullable="false" />
+          <Property Name="Marca_Id" Type="Int32" Nullable="false" />
+          <Property Name="MotorCC" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Anho" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Marca" Relationship="Self.FK_Auto_Marca" FromRole="Vehiculo" ToRole="Marca" />
+          <NavigationProperty Name="TipoAuto" Relationship="Self.FK_Auto_TipoAuto" FromRole="Vehiculo" ToRole="TipoAuto" />
+          <NavigationProperty Name="TipoTransmision" Relationship="Self.FK_Auto_TipoTransmision" FromRole="Vehiculo" ToRole="TipoTransmision" />
+          <NavigationProperty Name="VehiculoConcesionarias" Relationship="Self.FK_AutoConcesionaria_Auto" FromRole="Vehiculo" ToRole="VehiculoConcesionaria" />
+        </EntityType>
+        <EntityType Name="VehiculoConcesionaria">
+          <Key>
+            <PropertyRef Name="ID_Concesionaria_Vehiculo" />
+          </Key>
+          <Property Name="ID_Concesionaria_Vehiculo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vehiculo_Id" Type="Int32" Nullable="false" />
+          <Property Name="Concesionaria_Id" Type="Int32" Nullable="false" />
+          <Property Name="PrecioFinanciadoDolares" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="MaximoPlazoFinanciacion" Type="Int32" Nullable="false" />
+          <Property Name="MinimoPlazoFinanciacion" Type="Int32" Nullable="false" />
+          <Property Name="PrecioListaDolares" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="EntregaDolares" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <NavigationProperty Name="Concesionaria" Relationship="Self.FK_AutoConcesionaria_Concesionaria" FromRole="VehiculoConcesionaria" ToRole="Concesionaria" />
+          <NavigationProperty Name="Vehiculo" Relationship="Self.FK_AutoConcesionaria_Auto" FromRole="VehiculoConcesionaria" ToRole="Vehiculo" />
+        </EntityType>
+        <Association Name="FK_AutoConcesionaria_Concesionaria">
+          <End Role="Concesionaria" Type="Self.Concesionaria" Multiplicity="1" />
+          <End Role="VehiculoConcesionaria" Type="Self.VehiculoConcesionaria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Concesionaria">
+              <PropertyRef Name="ID_Concesionaria" />
+            </Principal>
+            <Dependent Role="VehiculoConcesionaria">
+              <PropertyRef Name="Concesionaria_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Auto_Marca">
+          <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
+          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="ID_Marca" />
+            </Principal>
+            <Dependent Role="Vehiculo">
+              <PropertyRef Name="Marca_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Auto_TipoAuto">
+          <End Role="TipoAuto" Type="Self.TipoAuto" Multiplicity="1" />
+          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoAuto">
+              <PropertyRef Name="ID_Tipo_Auto" />
+            </Principal>
+            <Dependent Role="Vehiculo">
+              <PropertyRef Name="Tipo_Auto_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Auto_TipoTransmision">
+          <End Role="TipoTransmision" Type="Self.TipoTransmision" Multiplicity="1" />
+          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoTransmision">
+              <PropertyRef Name="ID_TipoTransmision" />
+            </Principal>
+            <Dependent Role="Vehiculo">
+              <PropertyRef Name="TipoTransmision_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AutoConcesionaria_Auto">
+          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+          <End Role="VehiculoConcesionaria" Type="Self.VehiculoConcesionaria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehiculo">
+              <PropertyRef Name="ID_Auto" />
+            </Principal>
+            <Dependent Role="VehiculoConcesionaria">
+              <PropertyRef Name="Vehiculo_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="cerokmdbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Concesionarias" EntityType="Self.Concesionaria" />
+          <EntitySet Name="Contactoes" EntityType="Self.Contacto" />
+          <EntitySet Name="Marcas" EntityType="Self.Marca" />
+          <EntitySet Name="TipoAutoes" EntityType="Self.TipoAuto" />
+          <EntitySet Name="TipoTransmisions" EntityType="Self.TipoTransmision" />
+          <EntitySet Name="Vehiculoes" EntityType="Self.Vehiculo" />
+          <EntitySet Name="VehiculoConcesionarias" EntityType="Self.VehiculoConcesionaria" />
+          <AssociationSet Name="FK_AutoConcesionaria_Concesionaria" Association="Self.FK_AutoConcesionaria_Concesionaria">
+            <End Role="Concesionaria" EntitySet="Concesionarias" />
+            <End Role="VehiculoConcesionaria" EntitySet="VehiculoConcesionarias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Auto_Marca" Association="Self.FK_Auto_Marca">
+            <End Role="Marca" EntitySet="Marcas" />
+            <End Role="Vehiculo" EntitySet="Vehiculoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Auto_TipoAuto" Association="Self.FK_Auto_TipoAuto">
+            <End Role="TipoAuto" EntitySet="TipoAutoes" />
+            <End Role="Vehiculo" EntitySet="Vehiculoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Auto_TipoTransmision" Association="Self.FK_Auto_TipoTransmision">
+            <End Role="TipoTransmision" EntitySet="TipoTransmisions" />
+            <End Role="Vehiculo" EntitySet="Vehiculoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AutoConcesionaria_Auto" Association="Self.FK_AutoConcesionaria_Auto">
+            <End Role="Vehiculo" EntitySet="Vehiculoes" />
+            <End Role="VehiculoConcesionaria" EntitySet="VehiculoConcesionarias" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="cerokmdbModelStoreContainer" CdmEntityContainer="cerokmdbEntities">
+          <EntitySetMapping Name="Concesionarias">
+            <EntityTypeMapping TypeName="cerokmdbModel.Concesionaria">
+              <MappingFragment StoreEntitySet="Concesionaria">
+                <ScalarProperty Name="ID_Concesionaria" ColumnName="ID_Concesionaria" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contactoes">
+            <EntityTypeMapping TypeName="cerokmdbModel.Contacto">
+              <MappingFragment StoreEntitySet="Contacto">
+                <ScalarProperty Name="ID_Contacto" ColumnName="ID_Contacto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Asunto" ColumnName="Asunto" />
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Marcas">
+            <EntityTypeMapping TypeName="cerokmdbModel.Marca">
+              <MappingFragment StoreEntitySet="Marca">
+                <ScalarProperty Name="ID_Marca" ColumnName="ID_Marca" />
+                <ScalarProperty Name="Nombre_Marca" ColumnName="Nombre_Marca" />
+                <ScalarProperty Name="Descripcion_Marca" ColumnName="Descripcion_Marca" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoAutoes">
+            <EntityTypeMapping TypeName="cerokmdbModel.TipoAuto">
+              <MappingFragment StoreEntitySet="TipoAuto">
+                <ScalarProperty Name="ID_Tipo_Auto" ColumnName="ID_Tipo_Auto" />
+                <ScalarProperty Name="Descripion" ColumnName="Descripion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoTransmisions">
+            <EntityTypeMapping TypeName="cerokmdbModel.TipoTransmision">
+              <MappingFragment StoreEntitySet="TipoTransmision">
+                <ScalarProperty Name="ID_TipoTransmision" ColumnName="ID_TipoTransmision" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehiculoes">
+            <EntityTypeMapping TypeName="cerokmdbModel.Vehiculo">
+              <MappingFragment StoreEntitySet="Vehiculo">
+                <ScalarProperty Name="ID_Auto" ColumnName="ID_Auto" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Tipo_Auto_Id" ColumnName="Tipo_Auto_Id" />
+                <ScalarProperty Name="TipoTransmision_id" ColumnName="TipoTransmision_id" />
+                <ScalarProperty Name="Marca_Id" ColumnName="Marca_Id" />
+                <ScalarProperty Name="MotorCC" ColumnName="MotorCC" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Anho" ColumnName="Anho" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehiculoConcesionarias">
+            <EntityTypeMapping TypeName="cerokmdbModel.VehiculoConcesionaria">
+              <MappingFragment StoreEntitySet="VehiculoConcesionaria">
+                <ScalarProperty Name="ID_Concesionaria_Vehiculo" ColumnName="ID_Concesionaria_Vehiculo" />
+                <ScalarProperty Name="Vehiculo_Id" ColumnName="Vehiculo_Id" />
+                <ScalarProperty Name="Concesionaria_Id" ColumnName="Concesionaria_Id" />
+                <ScalarProperty Name="PrecioFinanciadoDolares" ColumnName="PrecioFinanciadoDolares" />
+                <ScalarProperty Name="MaximoPlazoFinanciacion" ColumnName="MaximoPlazoFinanciacion" />
+                <ScalarProperty Name="MinimoPlazoFinanciacion" ColumnName="MinimoPlazoFinanciacion" />
+                <ScalarProperty Name="PrecioListaDolares" ColumnName="PrecioListaDolares" />
+                <ScalarProperty Name="EntregaDolares" ColumnName="EntregaDolares" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

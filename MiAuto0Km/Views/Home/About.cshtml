@@ -1,7 +1,62 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "Nosotros";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<link href="~/Content/about-style.css" rel="stylesheet" type="text/css" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500&family=Roboto+Slab&display=swap" rel="stylesheet">
+
+<div class="about-section">
+    <h1>Nosotros</h1>
+    <p>Somos estudiantes de la carrera de Ing. Informática.</p>
+    <p>Este es el trabajo práctico final de C# Avanzado.</p>
+</div>
+
+<h2 style="text-align:center">Nuestro equipo</h2>
+<div class="row">
+    <div class="column">
+        <div class="card">
+            <center><img src="~/Content/Images/strange.jpg" alt="Jane" style="width:50%"></center>
+            <div class="container">
+                <h2>Walter Ortiz</h2>
+                <p class="title">CEO/Programador/Diseñador</p>
+                <p>Estudiante de ing. informática.</p>
+                <p>Apasionado del fútbol y el ánime.</p>
+                <p>Programador backend en Roshka S.A.</p>
+                <p>Skills</p>
+                <ul>
+                    <li>Java</li>
+                    <li>PostgreSQL</li>
+                    <li>Oracle</li>
+                    <li>Tomcat</li>
+                    <li>JBOSS</li>
+                </ul>
+                <p>wortiz@uaa.edy.py</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            <center> <img src="~/Content/Images/antman.jpg" alt="Jane" style="width:50%"></center>
+            <div class="container">
+                <h2>Jorge Cáceres</h2>
+                <p class="title">Programador/Diseñador</p>
+                <p>Estudiante de ing. informática.</p>
+                <p>Apasionado del fútbol y la música, más si la hace Metallica.</p>
+                <p>Programador backend en Roshka S.A./BrosCo S.A.</p>
+                <p>Skills</p>
+                <ul>
+                    <li>Java</li>
+                    <li>C#</li>
+                    <li>PostgreSQL</li>
+                    <li>Oracle</li>
+                    <li>Tomcat</li>
+                    <li>JBOSS</li>
+                </ul>
+                <p>jacaceres@uaa.edy.py</p>
+            </div>
+        </div>
+    </div>
+
+</div>

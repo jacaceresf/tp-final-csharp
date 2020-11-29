@@ -1,0 +1,76 @@
+﻿@model MiAuto0Km.VehiculoConcesionaria
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles del vehículo en la concesionaria</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioFinanciadoDolares)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioFinanciadoDolares)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaximoPlazoFinanciacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaximoPlazoFinanciacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinimoPlazoFinanciacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinimoPlazoFinanciacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioListaDolares)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioListaDolares)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EntregaDolares)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EntregaDolares)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Concesionaria.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Concesionaria.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehiculo.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehiculo.Descripcion)
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehiculo.TipoTransmision.Descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Volver a la lista", "Index")
+</p>
