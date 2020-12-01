@@ -191,6 +191,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MarcasController.cs" />
+    <Compile Include="Controllers\TipoAutoesController.cs" />
     <Compile Include="Controllers\VehiculoConcesionariasController.cs" />
     <Compile Include="Controllers\VehiculoesController.cs" />
     <Compile Include="Global.asax.cs">

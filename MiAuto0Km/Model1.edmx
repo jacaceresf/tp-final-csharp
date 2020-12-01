@@ -204,7 +204,6 @@
           </Key>
           <Property Name="ID_Tipo_Auto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descripion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Vehiculoes" Relationship="Self.FK_Auto_TipoAuto" FromRole="TipoAuto" ToRole="Vehiculo" />
         </EntityType>
         <EntityType Name="TipoTransmision">
           <Key>

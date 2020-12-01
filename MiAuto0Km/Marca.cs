@@ -9,17 +9,13 @@
 
 namespace MiAuto0Km
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
     public partial class Marca
     {
-        [JsonProperty(PropertyName = "IdMarca")]
         public int ID_Marca { get; set; }
-        [JsonProperty(PropertyName = "Nombre")]
         public string Nombre_Marca { get; set; }
-        [JsonProperty(PropertyName = "Descripcion")]
         public string Descripcion_Marca { get; set; }
     }
 }
