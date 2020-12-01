@@ -9,22 +9,17 @@
 
 namespace MiAuto0Km
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
     public partial class Marca
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Marca()
-        {
-            this.Vehiculoes = new HashSet<Vehiculo>();
-        }
-    
+        [JsonProperty(PropertyName = "IdMarca")]
         public int ID_Marca { get; set; }
+        [JsonProperty(PropertyName = "Nombre")]
         public string Nombre_Marca { get; set; }
+        [JsonProperty(PropertyName = "Descripcion")]
         public string Descripcion_Marca { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Vehiculo> Vehiculoes { get; set; }
     }
 }

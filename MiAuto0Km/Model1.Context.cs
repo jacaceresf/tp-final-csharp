@@ -13,9 +13,9 @@ namespace MiAuto0Km
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CerokmEntities : DbContext
+    public partial class cerokmdbEntities : DbContext
     {
-        public CerokmEntities()
+        public cerokmdbEntities()
             : base("name=cerokmdbEntities")
         {
         }

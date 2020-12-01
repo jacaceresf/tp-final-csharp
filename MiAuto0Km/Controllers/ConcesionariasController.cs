@@ -12,7 +12,7 @@ namespace MiAuto0Km.Controllers
 {
     public class ConcesionariasController : Controller
     {
-        private CerokmEntities db = new CerokmEntities();
+        private cerokmdbEntities db = new cerokmdbEntities();
 
         [Authorize]
         // GET: Concesionarias

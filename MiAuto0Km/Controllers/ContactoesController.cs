@@ -12,7 +12,7 @@ namespace MiAuto0Km.Controllers
 {
     public class ContactoesController : Controller
     {
-        private CerokmEntities db = new CerokmEntities();
+        private cerokmdbEntities db = new cerokmdbEntities();
 
         // GET: Contactoes
         public ActionResult Index()
