@@ -9,21 +9,15 @@
 
 namespace MiAuto0Km
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
     public partial class TipoAuto
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TipoAuto()
-        {
-            this.Vehiculoes = new HashSet<Vehiculo>();
-        }
-    
+        [JsonProperty(PropertyName = "Id")]
         public int ID_Tipo_Auto { get; set; }
+        [JsonProperty(PropertyName = "Descripcion")]
         public string Descripion { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Vehiculo> Vehiculoes { get; set; }
     }
 }
