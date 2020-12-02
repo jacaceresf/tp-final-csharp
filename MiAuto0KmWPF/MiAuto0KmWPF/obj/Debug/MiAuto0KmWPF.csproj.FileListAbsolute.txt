@@ -28,3 +28,13 @@ C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiA
 C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiAuto0KmWPF\obj\Debug\MiAuto0KmWPF.exe
 C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiAuto0KmWPF\obj\Debug\MiAuto0KmWPF.pdb
 C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiAuto0KmWPF\obj\Debug\MiAuto0KmWPF.csprojAssemblyReference.cache
+C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiAuto0KmWPF\bin\Debug\ControlzEx.dll
+C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiAuto0KmWPF\bin\Debug\MahApps.Metro.dll
+C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiAuto0KmWPF\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiAuto0KmWPF\bin\Debug\ControlzEx.pdb
+C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiAuto0KmWPF\bin\Debug\ControlzEx.xml
+C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiAuto0KmWPF\bin\Debug\MahApps.Metro.pdb
+C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiAuto0KmWPF\bin\Debug\MahApps.Metro.xml
+C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiAuto0KmWPF\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiAuto0KmWPF\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiAuto0KmWPF\obj\Debug\App.baml
