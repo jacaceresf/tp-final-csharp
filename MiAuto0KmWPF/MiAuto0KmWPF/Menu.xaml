@@ -6,12 +6,22 @@
         xmlns:local="clr-namespace:MiAuto0KmWPF"
         mc:Ignorable="d"
         Title="Menu" WindowState="Maximized">
-    <Menu Name="MenuPrincipal">
-        <MenuItem Header="Opciones">
-            <MenuItem Header="Marcas" Click="MenuMarca_Click"/>
-            <MenuItem Header="Autos"/>
-            <Separator />
-            <MenuItem Header="Salir" />
-        </MenuItem>
-    </Menu>
+    <DockPanel>
+        <Menu Name="MenuPrincipal">
+            <MenuItem Header="Options">
+                <MenuItem Header="Contacto" IsEnabled="False"/>
+                <MenuItem Header="Concesionaria" IsEnabled="False"/>
+                <MenuItem Header="Vehiculo">
+                    <MenuItem Header="Marcas" Click="MenuMarca_Click"/>
+                    <MenuItem Header="Tipo de Vehiculo" IsEnabled="False"/>
+                    <MenuItem Header="Tipo de Transmision" IsEnabled="False" />
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Salir" />
+            </MenuItem>
+            <MenuItem Header="Edit"/>
+            <MenuItem Header="View"/>
+            <MenuItem Header="Help"/>
+        </Menu>
+    </DockPanel>
 </Window>
