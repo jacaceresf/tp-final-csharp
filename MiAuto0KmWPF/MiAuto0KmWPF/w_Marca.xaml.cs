@@ -39,6 +39,13 @@ namespace MiAuto0KmWPF
 
         }
 
+        private void Limpiar()
+        {
+            txtId.Text = string.Empty;
+            txtDescripcion.Text = string.Empty;
+            txtNombre.Text = string.Empty;
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             CargarDatosGrilla();
@@ -46,9 +53,7 @@ namespace MiAuto0KmWPF
 
         private void btnLimpiar_Click(object sender, RoutedEventArgs e)
         {
-            txtId.Text = string.Empty;
-            txtDescripcion.Text = string.Empty;
-            txtNombre.Text = string.Empty;
+            Limpiar();
         }
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
@@ -59,6 +64,7 @@ namespace MiAuto0KmWPF
                 datos.Marca.Remove(m);
                 datos.SaveChanges();
                 CargarDatosGrilla();
+                Limpiar();
             }
             else
                 MessageBox.Show("Debe seleccionar una Artesania de la grilla para eliminar!");
@@ -74,6 +80,7 @@ namespace MiAuto0KmWPF
                 datos.Entry(m).State = System.Data.Entity.EntityState.Modified;
                 datos.SaveChanges();
                 CargarDatosGrilla();
+                Limpiar();
             }
             else
                 MessageBox.Show("Debe seleccionar una Marca de la grilla para modificar!");
@@ -87,6 +94,7 @@ namespace MiAuto0KmWPF
             datos.Marca.Add(m);
             datos.SaveChanges();
             CargarDatosGrilla();
+            Limpiar();
         }
 
         private void dgMarcas_MouseDoubleClick(object sender, MouseButtonEventArgs e)

@@ -197,7 +197,6 @@
           <Property Name="ID_Marca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre_Marca" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Descripcion_Marca" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Vehiculo" Relationship="Self.FK_Auto_Marca" FromRole="Marca" ToRole="Vehiculo" />
         </EntityType>
         <EntityType Name="TipoAuto">
           <Key>

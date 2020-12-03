@@ -37,3 +37,4 @@ C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiA
 C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiAuto0KmWPF\obj\Debug\MiAuto0KmWPF.csproj.CopyComplete
 C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiAuto0KmWPF\obj\Debug\MiAuto0KmWPF.exe
 C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiAuto0KmWPF\obj\Debug\MiAuto0KmWPF.pdb
+C:\Users\Walter Ortiz\Documents\UAA\C#\Tp Final\tp-final-csharp\MiAuto0KmWPF\MiAuto0KmWPF\obj\Debug\MiAuto0KmWPF.csprojAssemblyReference.cache
