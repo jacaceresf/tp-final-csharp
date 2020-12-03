@@ -83,7 +83,7 @@
             <BeginStoryboard x:Name="CloseMenu_BeginStoryboard" Storyboard="{StaticResource CloseMenu}"/>
         </EventTrigger>
     </Window.Triggers>
-    <Grid Background="#FF3580BF">
+    <Grid Background="#FF0000">
         <StackPanel x:Name="StackPanelMenu" Width="250" HorizontalAlignment="Left" Margin="-250 0 0 0" RenderTransformOrigin="0.5,0.5">
             <StackPanel.RenderTransform>
                 <TransformGroup>
@@ -106,7 +106,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </Button.RenderTransform>
-                    
+                    <Image Source="/Images/me.jpeg" Stretch="UniformToFill" HorizontalAlignment="Left"/>
                 </Button>
                 <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Width="50" Height="50" Margin="10">
                     <materialDesign:PackIcon Kind="InformationOutline" Width="40" Height="40"/>
@@ -127,9 +127,9 @@
                             <materialDesign:PackIcon Kind="Car" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
                             <TextBlock Text="Vehiculos" Margin="10" VerticalAlignment="Center"/>
                         </StackPanel>
-                </ListViewItem>
+                    </ListViewItem>
                 </Button>
-                    <ListViewItem x:Name="listViewItem1" Height="50" RenderTransformOrigin="0.5,0.5" Width="219">
+                <ListViewItem x:Name="listViewItem1" Height="50" RenderTransformOrigin="0.5,0.5" Width="219">
                     <ListViewItem.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -137,7 +137,7 @@
                             <RotateTransform/>
                             <TranslateTransform/>
                         </TransformGroup>
-                        
+
                     </ListViewItem.RenderTransform>
                     <Button Name="marcas"  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Width="199" Height="40" Click="marcas_Click">
 
@@ -147,15 +147,15 @@
                         </StackPanel>
                     </Button>
                 </ListViewItem>
-                    <ListViewItem x:Name="listViewItem2" Height="60" RenderTransformOrigin="0.5,0.5" Width="210">
-                        <ListViewItem.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform/>
-                                <SkewTransform/>
-                                <RotateTransform/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </ListViewItem.RenderTransform>
+                <ListViewItem x:Name="listViewItem2" Height="60" RenderTransformOrigin="0.5,0.5" Width="210">
+                    <ListViewItem.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ListViewItem.RenderTransform>
                     <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Width="134" Height="57" RenderTransformOrigin="0.608,0.674">
 
                         <StackPanel Orientation="Horizontal" Margin="10 0">
@@ -165,15 +165,15 @@
                     </Button>
 
                 </ListViewItem>
-                    <ListViewItem x:Name="listViewItem3" Height="60" RenderTransformOrigin="0.5,0.5" Width="203">
-                        <ListViewItem.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform/>
-                                <SkewTransform/>
-                                <RotateTransform/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </ListViewItem.RenderTransform>
+                <ListViewItem x:Name="listViewItem3" Height="60" RenderTransformOrigin="0.5,0.5" Width="203">
+                    <ListViewItem.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ListViewItem.RenderTransform>
                     <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Width="171" Height="50">
                         <StackPanel Orientation="Horizontal" Margin="10 0">
                             <materialDesign:PackIcon Kind="CardGiftcard" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
@@ -181,15 +181,15 @@
                         </StackPanel>
                     </Button>
                 </ListViewItem>
-                    <ListViewItem x:Name="listViewItem4" Height="60" RenderTransformOrigin="0.5,0.5" Width="200">
-                        <ListViewItem.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform/>
-                                <SkewTransform/>
-                                <RotateTransform/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </ListViewItem.RenderTransform>
+                <ListViewItem x:Name="listViewItem4" Height="60" RenderTransformOrigin="0.5,0.5" Width="200">
+                    <ListViewItem.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ListViewItem.RenderTransform>
                     <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Width="169" Height="50">
                         <StackPanel Orientation="Horizontal" Margin="10 0">
                             <materialDesign:PackIcon Kind="Skype" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
@@ -213,7 +213,7 @@
                 <ColumnDefinition Width="250"/>
             </Grid.ColumnDefinitions>
 
-            
+
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"/>
@@ -236,13 +236,13 @@
                 </Button>
 
                 <materialDesign:PackIcon Kind="Car" Width="30" Height="30" VerticalAlignment="Center" Margin="5,10,0,9.6" Grid.Row="1"/>
-                <TextBlock Text="Vehiculos" Foreground="#FF3580BF" FontSize="30" FontWeight="Bold" Margin="49,5,5.4,4.6" Grid.Row="1"/>
+                <TextBlock Text="Mi Auto 0 KM" Foreground="#A91101" FontSize="30" FontWeight="Bold" Margin="49,5,5.4,4.6" Grid.Row="1"/>
 
                 <Grid Margin="5" Grid.Row="2" Grid.Column="0">
                     <Grid.Effect>
                         <DropShadowEffect BlurRadius="20" Color="#FFEEEEEE" ShadowDepth="1"/>
                     </Grid.Effect>
-                    <Image Source="/Assets/sonata-hero.jpg" Stretch="UniformToFill" Margin="0,0,-27.6,0"/>
+                    <Image Source="/Images/sonata-hero.jpg" Stretch="UniformToFill" HorizontalAlignment="Left"/>
                     <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                         <materialDesign:PackIcon Kind="Heart" Foreground="#FFFBFBFB"/>
                         <TextBlock Text="25" Foreground="#FFFBFBFB"/>
@@ -252,6 +252,7 @@
                     <Grid.Effect>
                         <DropShadowEffect BlurRadius="20" Color="#FFEEEEEE" ShadowDepth="1"/>
                     </Grid.Effect>
+                    <Image Source="/Images/car5.jpg" Stretch="UniformToFill" HorizontalAlignment="Left"/>
                     <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                         <materialDesign:PackIcon Kind="Heart" Foreground="#FFFBFBFB"/>
                         <TextBlock Text="50" Foreground="#FFFBFBFB"/>
@@ -261,12 +262,33 @@
                     <Grid.Effect>
                         <DropShadowEffect BlurRadius="20" Color="#FFEEEEEE" ShadowDepth="1"/>
                     </Grid.Effect>
+                    <Image Source="/Images/car2.png" Stretch="UniformToFill" HorizontalAlignment="Left"/>
                     <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                         <materialDesign:PackIcon Kind="Heart" Foreground="#FFFBFBFB"/>
                         <TextBlock Text="18" Foreground="#FFFBFBFB"/>
                     </StackPanel>
                 </Grid>
                 <Grid Margin="5" Grid.Row="3" Grid.Column="0">
+                    <Grid.Effect>
+                        <DropShadowEffect BlurRadius="20" Color="#FFEEEEEE" ShadowDepth="1"/>
+                    </Grid.Effect>
+                    <Image Source="/Images/car7.jpg" Stretch="UniformToFill" HorizontalAlignment="Left" Width="248" Margin="0,0,0,-119"/>
+                    <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                        <materialDesign:PackIcon Kind="Heart" Foreground="#FFFBFBFB"/>
+                        <TextBlock Text="32" Foreground="#FFFBFBFB"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Margin="5" Grid.Row="3" Grid.Column="1">
+                    <Grid.Effect>
+                        <DropShadowEffect BlurRadius="20" Color="#FFEEEEEE" ShadowDepth="1"/>
+                    </Grid.Effect>
+                    <Image Source="/Images/car8.jpg" Stretch="UniformToFill" HorizontalAlignment="Left" Margin="0,0,-257.6,-120" Width="506"/>
+                    <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                        <materialDesign:PackIcon Kind="Heart" Foreground="#FFFBFBFB"/>
+                        <TextBlock Text="32" Foreground="#FFFBFBFB"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Margin="5" Grid.Row="3" Grid.Column="2">
                     <Grid.Effect>
                         <DropShadowEffect BlurRadius="20" Color="#FFEEEEEE" ShadowDepth="1"/>
                     </Grid.Effect>
