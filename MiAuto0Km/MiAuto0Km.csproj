@@ -237,7 +237,11 @@
     <Content Include="Content\about-style.css" />
     <Content Include="Content\banner.css" />
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\carb.jpg" />
+    <Content Include="Content\Images\carb.jpg" />
+    <Content Include="Content\Images\rio.jpg" />
+    <Content Include="Content\Images\versa.jpg" />
+    <Content Include="Content\Images\walter.jpeg" />
+    <Content Include="Content\Images\jorge.jpeg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -272,8 +276,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Content\Images\antman.jpg" />
-    <Content Include="Content\Images\strange.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

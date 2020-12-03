@@ -1,6 +1,6 @@
-﻿
-
-
+﻿body {
+    font-family: 'Roboto', sans-serif;
+}
 html {
     box-sizing: border-box;
 }
@@ -17,7 +17,6 @@ html {
 }
 
 .card {
-    font-family: 'Baloo 2', cursive;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
 }
